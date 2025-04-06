@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
+    [SerializeField] private InputActionReference sprint;
     
     [SerializeField]
     private float rotationSpeed;
@@ -46,10 +47,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movementDirection = new Vector3(inputDirection.x, 0, inputDirection.y);
         float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
         
-        // if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-        // {
-        //     inputMagnitude /= 2;
-        // }
+        if (sprint.action.inProgress)
+        {
+            inputMagnitude /= 2;
+        }
 
         animator.SetFloat("InputMagnitude", inputMagnitude, 0.05f, Time.deltaTime);
 
@@ -63,17 +64,11 @@ public class PlayerMovement : MonoBehaviour
             lastGroundedTime = Time.time;
         }
         
-        var isJumping = jump.action.triggered;
-        if (isJumping)
+        if (jump.action.triggered)
         {
             Debug.Log("Jumping");
             jumpButtonPressedTime = Time.time;
         }
-
-        // if (Input.GetButtonDown("Jump"))
-        // {
-        //     jumpButtonPressedTime = Time.time;
-        // }
 
         if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
         {
@@ -139,13 +134,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnApplicationFocus(bool focus)
     {
-        if (focus)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
+        Cursor.lockState = focus ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }
