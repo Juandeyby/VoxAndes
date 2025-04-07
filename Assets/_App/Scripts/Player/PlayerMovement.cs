@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
     [SerializeField] private InputActionReference sprint;
+    [SerializeField] private InputActionReference attack;
     
     [SerializeField]
     private float rotationSpeed;
@@ -68,6 +69,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Jumping");
             jumpButtonPressedTime = Time.time;
+        }
+        
+        if (attack.action.triggered)
+        {
+            Debug.Log("Attacking");
+            animator.SetBool("IsAttacking", true);
         }
 
         if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
