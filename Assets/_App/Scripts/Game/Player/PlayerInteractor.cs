@@ -3,11 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractor
 {
-    private readonly Animator _animator;
     private static readonly int IsInteracting = Animator.StringToHash("IsInteracting");
-
+    private readonly Animator _animator;
     private bool _isInteracting;
-    private const float InteractionDuration = 4.0f; 
+    private const float InteractionCooldown = 4.0f; 
     private float _lastInteractionTime = -999f;
 
     public bool IsInteractingNow => _isInteracting;
@@ -21,17 +20,17 @@ public class PlayerInteractor
     {
         if (interactAction.triggered && CanInteract())
         {
+            _animator.SetBool(IsInteracting, true);
             _isInteracting = true;
             _lastInteractionTime = Time.time;
-            _animator.SetBool(IsInteracting, true);
 
             // Aquí puedes lanzar eventos, raycasts, etc.
         }
 
-        if (_isInteracting && Time.time - _lastInteractionTime >= InteractionDuration)
+        if (_isInteracting && Time.time - _lastInteractionTime >= InteractionCooldown)
         {
-            _isInteracting = false;
             _animator.SetBool(IsInteracting, false);
+            _isInteracting = false;
         }
     }
 

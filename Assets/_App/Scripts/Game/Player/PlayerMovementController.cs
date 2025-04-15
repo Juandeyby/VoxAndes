@@ -31,15 +31,15 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
-        if (!_attacker.IsAttackingNow || !_interactor.IsInteractingNow)
+        if (!_attacker.IsAttackingNow && !_interactor.IsInteractingNow)
         {
             _mover.HandleMovement();
             _jumper.HandleJump();
-            _interactor.HandleInteract(interact);
         }
         if (!_jumper.IsJumpingNow)
         {
             _attacker.HandleAttack(attack);
+            _interactor.HandleInteract(interact);
         }
     }
 
