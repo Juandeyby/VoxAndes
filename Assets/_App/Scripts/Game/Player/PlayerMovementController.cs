@@ -13,10 +13,14 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private InputActionReference attack;
     [SerializeField] private InputActionReference interact;
 
+    public bool CanInteract { get; set; } = false;
+    public bool CanPlay { get; set; } = true;
+
     private PlayerMover _mover;
     private PlayerJumper _jumper;
     private PlayerAttacker _attacker;
     private PlayerInteractor _interactor;
+    public PlayerInteractor Interactor => _interactor;
 
     void Awake()
     {
@@ -31,6 +35,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
+        if (!CanPlay) return;
         if (!_attacker.IsAttackingNow && !_interactor.IsInteractingNow)
         {
             _mover.HandleMovement();
@@ -39,7 +44,10 @@ public class PlayerMovementController : MonoBehaviour
         if (!_jumper.IsJumpingNow)
         {
             _attacker.HandleAttack(attack);
-            _interactor.HandleInteract(interact);
+            if (CanInteract)
+            {
+                _interactor.HandleInteract(interact);
+            }
         }
     }
 

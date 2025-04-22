@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,8 @@ public class PlayerInteractor
     private bool _isInteracting;
     private const float InteractionCooldown = 4.0f; 
     private float _lastInteractionTime = -999f;
+
+    public Action<bool> OnInteractAction { get; set; }
 
     public bool IsInteractingNow => _isInteracting;
 
@@ -23,12 +26,12 @@ public class PlayerInteractor
             _animator.SetBool(IsInteracting, true);
             _isInteracting = true;
             _lastInteractionTime = Time.time;
-
-            // Aquí puedes lanzar eventos, raycasts, etc.
         }
 
         if (_isInteracting && Time.time - _lastInteractionTime >= InteractionCooldown)
         {
+            OnInteractAction?.Invoke(true);
+            
             _animator.SetBool(IsInteracting, false);
             _isInteracting = false;
         }
