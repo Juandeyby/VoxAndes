@@ -10,7 +10,8 @@ public class PlayerInteractor
     private const float InteractionCooldown = 4.0f; 
     private float _lastInteractionTime = -999f;
 
-    public Action<bool> OnInteractAction { get; set; }
+    public Action OnStartAction { get; set; }
+    public Action OnEndAction { get; set; }
 
     public bool IsInteractingNow => _isInteracting;
 
@@ -26,11 +27,13 @@ public class PlayerInteractor
             _animator.SetBool(IsInteracting, true);
             _isInteracting = true;
             _lastInteractionTime = Time.time;
+            
+            OnStartAction?.Invoke();
         }
 
         if (_isInteracting && Time.time - _lastInteractionTime >= InteractionCooldown)
         {
-            OnInteractAction?.Invoke(true);
+            OnEndAction?.Invoke();
             
             _animator.SetBool(IsInteracting, false);
             _isInteracting = false;
