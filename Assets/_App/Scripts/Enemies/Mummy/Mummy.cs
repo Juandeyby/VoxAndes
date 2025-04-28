@@ -67,7 +67,7 @@ public class MummyStateChase : IMummyState
         var playerPosition = GameSingleton.Instance.PlayerManager.PlayerMovementController.transform.position;
         var navMeshAgent = mummy.Agent;
         
-        if (Vector3.Distance(mummy.transform.position, playerPosition) <= 1f)
+        if (Vector3.Distance(mummy.transform.position, playerPosition) <= 1.5f)
         {
             mummy.SetState(new MummyStateAttack());
             return;
@@ -94,7 +94,7 @@ public class MummyStateAttack : IMummyState
         var playerPosition = GameSingleton.Instance.PlayerManager.PlayerMovementController.transform.position;
         var navMeshAgent = mummy.Agent;
 
-        if (Vector3.Distance(mummy.transform.position, playerPosition) > 1f)
+        if (Vector3.Distance(mummy.transform.position, playerPosition) > 2f)
         {
             mummy.SetState(new MummyStateChase());
             return;
