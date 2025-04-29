@@ -6,7 +6,7 @@ public class UILives : MonoBehaviour
     [SerializeField] private Image[] livesImages;
     [SerializeField] private Sprite[] livesSprites;
     [SerializeField] private int maxLives = 6;
-    
+
     public void SetLives(int lives)
     {
         if (lives < 0 || lives > maxLives)
@@ -15,20 +15,22 @@ public class UILives : MonoBehaviour
             return;
         }
 
-        // Full life, half life, empty life
+        var fullHearts = lives / 2;
+        var hasHalfHeart = (lives % 2) == 1;
+
         for (var i = 0; i < livesImages.Length; i++)
         {
-            if (i < lives)
+            if (i < fullHearts)
             {
-                livesImages[i].sprite = livesSprites[0]; // Full life
+                livesImages[i].sprite = livesSprites[0]; // Full
             }
-            else if (i == lives)
+            else if (i == fullHearts && hasHalfHeart)
             {
-                livesImages[i].sprite = livesSprites[1]; // Half life
+                livesImages[i].sprite = livesSprites[1]; // Half
             }
             else
             {
-                livesImages[i].sprite = livesSprites[2]; // Empty life
+                livesImages[i].sprite = livesSprites[2]; // Empty
             }
         }
     }
