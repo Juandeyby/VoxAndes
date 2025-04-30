@@ -32,7 +32,7 @@ public class PlayerMover
 
         InputMagnitude = Mathf.Clamp01(MovementDirection.magnitude);
         if (_sprint.action.inProgress)
-            InputMagnitude *= 1.5f;
+            InputMagnitude *= 0.5f;
 
         _animator.SetFloat(Magnitude, InputMagnitude, 0.05f, Time.deltaTime);
 
