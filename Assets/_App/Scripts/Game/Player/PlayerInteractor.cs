@@ -6,14 +6,12 @@ public class PlayerInteractor
 {
     private static readonly int IsInteracting = Animator.StringToHash("IsInteracting");
     private readonly Animator _animator;
-    private bool _isInteracting;
-    private const float InteractionCooldown = 4.0f; 
+    private const float InteractionCooldown = 4.45f; 
     private float _lastInteractionTime = -999f;
 
     public Action OnStartAction { get; set; }
     public Action OnEndAction { get; set; }
-
-    public bool IsInteractingNow => _isInteracting;
+    public bool IsInteractingNow { get; set; }
 
     public PlayerInteractor(Animator animator)
     {
@@ -22,26 +20,25 @@ public class PlayerInteractor
 
     public void HandleInteract(InputAction interactAction)
     {
-        if (interactAction.triggered && CanInteract())
+        if (interactAction.triggered)
         {
             _animator.SetBool(IsInteracting, true);
-            _isInteracting = true;
             _lastInteractionTime = Time.time;
             
+            IsInteractingNow = true;
+            
             OnStartAction?.Invoke();
+            OnStartAction = null;
         }
 
-        if (_isInteracting && Time.time - _lastInteractionTime >= InteractionCooldown)
+        if (Time.time - _lastInteractionTime >= InteractionCooldown)
         {
             OnEndAction?.Invoke();
+            OnEndAction = null;
+            
+            IsInteractingNow = false;
             
             _animator.SetBool(IsInteracting, false);
-            _isInteracting = false;
         }
-    }
-
-    private bool CanInteract()
-    {
-        return !_isInteracting;
     }
 }

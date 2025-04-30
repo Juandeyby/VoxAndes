@@ -13,8 +13,6 @@ public class Mummy : MonoBehaviour
     public CharacterController CharacterController => characterController;
     [SerializeField] private UnityEvent onDeath;
     public UnityEvent OnDeath => onDeath;
-    [SerializeField] private Collider attackCollider;
-    public Collider AttackCollider => attackCollider;
     private IMummyState _currentState;
 
     private void Start()
@@ -75,7 +73,7 @@ public class MummyStateChase : IMummyState
         var navMeshAgent = mummy.Agent;
         
         // Verificar la distancia entre la momia y el jugador
-        if (Vector3.Distance(mummy.transform.position, playerPosition) <= 1.2f)
+        if (Vector3.Distance(mummy.transform.position, playerPosition) <= 1f)
         {
             mummy.SetState(new MummyStateAttack());
             return;
@@ -107,7 +105,6 @@ public class MummyStateAttack : IMummyState
     public void Enter(Mummy mummy)
     {
         mummy.Animator.SetTrigger("Attack");
-        mummy.AttackCollider.enabled = true;
     }
 
     public void Update(Mummy mummy)
@@ -128,7 +125,6 @@ public class MummyStateAttack : IMummyState
     public void Exit(Mummy mummy)
     {
         // Logic for exiting attack state
-        mummy.AttackCollider.enabled = false;
     }
 }
 

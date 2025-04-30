@@ -13,7 +13,6 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private InputActionReference attack;
     [SerializeField] private InputActionReference interact;
 
-    public bool CanInteract { get; set; } = false;
     public bool CanPlay { get; set; } = true;
 
     private PlayerMover _mover;
@@ -44,10 +43,7 @@ public class PlayerMovementController : MonoBehaviour
         if (!_jumper.IsJumpingNow)
         {
             _attacker.HandleAttack(attack);
-            if (CanInteract)
-            {
-                _interactor.HandleInteract(interact);
-            }
+            _interactor.HandleInteract(interact);
         }
     }
 
