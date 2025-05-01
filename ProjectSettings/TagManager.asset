@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerTorch
   - EnemyHand
+  - Thorns
   layers:
   - Default
   - TransparentFX

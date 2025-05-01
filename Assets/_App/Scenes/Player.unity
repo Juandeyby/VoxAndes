@@ -2446,6 +2446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovementController: {fileID: 1061149063}
+  playerHealth: {fileID: 1061149065}
 --- !u!114 &1061149065
 MonoBehaviour:
   m_ObjectHideFlags: 0
