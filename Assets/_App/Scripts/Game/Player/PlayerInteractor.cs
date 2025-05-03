@@ -40,7 +40,7 @@ public class PlayerInteractor
 
     public void UpdateState()
     {
-        if (Time.time - _lastInteractionTime >= InteractionCooldown)
+        if (Time.time - _lastInteractionTime >= InteractionCooldown && IsInteractingNow)
         {
             OnEndAction?.Invoke();
             OnEndAction = null;

@@ -8,28 +8,28 @@ public class InteractArea : MonoBehaviour
 {
     [SerializeField] private UnityEvent onInteractEvent;
     [SerializeField] private Transform transformTarget;
-    private bool _isInteracting = true;
+    [SerializeField] private bool isUsable = false;
+    private bool _isActive = true;
     
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        var playerMovementController = other.GetComponent<PlayerMovementController>();
-        if (playerMovementController == null) return;
-        if (_isInteracting == false) return;
+        if (_isActive == false && isUsable == false) return;
+        
+        var playerMovementController = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        playerMovementController.CanInteract = true;
         playerMovementController.Interactor.OnStartAction += OnStartInteract;
         playerMovementController.Interactor.OnEndAction += OnEndInteract;
+        
         var uiInteraction = GameSingleton.Instance.UIGameManager.HubMenu.Instruction;
         uiInteraction.Show();
     }
 
     private void OnStartInteract()
     {
-        var playerMovementController = GameSingleton.Instance.PlayerManager.PlayerMovementController;
-        if (playerMovementController == null) return;
-        if (_isInteracting == false) return;
-        _isInteracting = false;
-        playerMovementController.Interactor.OnStartAction -= OnStartInteract;
-        playerMovementController.Interactor.OnEndAction -= OnEndInteract;
+        if (_isActive == false && isUsable == false) return;
+        _isActive = false;
+
         var uiInteraction = GameSingleton.Instance.UIGameManager.HubMenu.Instruction;
         uiInteraction.Hide();
         
@@ -46,9 +46,10 @@ public class InteractArea : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         var playerMovementController = GameSingleton.Instance.PlayerManager.PlayerMovementController;
-        if (playerMovementController == null) return;
+        playerMovementController.CanInteract = false;
         playerMovementController.Interactor.OnStartAction -= OnStartInteract;
         playerMovementController.Interactor.OnEndAction -= OnEndInteract;
+        
         var uiInteraction = GameSingleton.Instance.UIGameManager.HubMenu.Instruction;
         uiInteraction.Hide();
     }
