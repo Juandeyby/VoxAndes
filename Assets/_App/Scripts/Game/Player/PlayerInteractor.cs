@@ -20,9 +20,15 @@ public class PlayerInteractor
 
     public void HandleInteract(InputAction interactAction)
     {
-        if (interactAction.triggered)
+        var playerMovement = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        if (playerMovement.Jumper.IsJumpingNow || playerMovement.Attacker.IsAttackingNow)
         {
-            _animator.SetBool(IsInteracting, true);
+            return;
+        }
+
+        if (interactAction.WasPressedThisFrame() && !IsInteractingNow)
+        {
+            _animator.SetTrigger(IsInteracting);
             _lastInteractionTime = Time.time;
             
             IsInteractingNow = true;
@@ -30,15 +36,16 @@ public class PlayerInteractor
             OnStartAction?.Invoke();
             OnStartAction = null;
         }
+    }
 
+    public void UpdateState()
+    {
         if (Time.time - _lastInteractionTime >= InteractionCooldown)
         {
             OnEndAction?.Invoke();
             OnEndAction = null;
             
             IsInteractingNow = false;
-            
-            _animator.SetBool(IsInteracting, false);
         }
     }
 }

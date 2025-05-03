@@ -17,23 +17,26 @@ public class PlayerAttacker
 
     public void HandleAttack(InputAction attackAction)
     {
-        if (attackAction.triggered && CanAttack())
+        var playerMovement = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        if (playerMovement.Jumper.IsJumpingNow || playerMovement.Interactor.IsInteractingNow)
         {
-            _animator.SetBool(IsAttacking, true);
+            return;
+        }
+        
+        // Check for input and if not currently attacking
+        if (attackAction.WasPressedThisFrame() && !_isAttacking)
+        {
+            _animator.SetTrigger(IsAttacking);
             _isAttacking = true;
             _lastAttackTime = Time.time;
         }
+    }
 
+    public void UpdateState()
+    {
         if (_isAttacking && Time.time - _lastAttackTime >= AttackCooldown)
         {
-            _animator.SetBool(IsAttacking, false);
             _isAttacking = false;
-        }
-    }
-
-    private bool CanAttack()
-    {
-        return !_isAttacking;
+        } 
     }
 }
-

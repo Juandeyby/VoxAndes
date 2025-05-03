@@ -14,10 +14,13 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private InputActionReference interact;
 
     public bool CanPlay { get; set; } = true;
+    public bool CanInteract { get; set; } = false;
 
     private PlayerMover _mover;
     private PlayerJumper _jumper;
+    public PlayerJumper Jumper => _jumper;
     private PlayerAttacker _attacker;
+    public PlayerAttacker Attacker => _attacker;
     private PlayerInteractor _interactor;
     public PlayerInteractor Interactor => _interactor;
 
@@ -35,16 +38,26 @@ public class PlayerMovementController : MonoBehaviour
     void Update()
     {
         if (!CanPlay) return;
-        if (!_attacker.IsAttackingNow && !_interactor.IsInteractingNow)
+
+        // Update states
+        _jumper.UpdateState();     // e.g. check if landed, update IsJumping
+        _attacker.UpdateState();   // e.g. check attack cooldowns
+        _interactor.UpdateState(); // if needed
+
+        // Handle jump input first (allowed any time unless already jumping)
+        _jumper.HandleJump();
+
+        // Then handle attack (only if not jumping)
+        _attacker.HandleAttack(attack);
+
+        // Then interaction (if allowed)
+        if (CanInteract)
         {
-            _mover.HandleMovement();
-            _jumper.HandleJump();
-        }
-        if (!_jumper.IsJumpingNow)
-        {
-            _attacker.HandleAttack(attack);
             _interactor.HandleInteract(interact);
         }
+
+        // Movement allowed as long as not locked (maybe jumping or attacking movement is okay)
+        _mover.HandleMovement();
     }
 
     void OnAnimatorMove()
@@ -56,4 +69,13 @@ public class PlayerMovementController : MonoBehaviour
     {
         Cursor.lockState = focus ? CursorLockMode.Locked : CursorLockMode.None;
     }
+}
+
+public enum PlayerAction
+{
+    None,
+    Jumping,
+    Attacking,
+    Interacting,
+    Moving
 }

@@ -32,6 +32,12 @@ public class PlayerJumper
 
     public void HandleJump()
     {
+        var playerMovement = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        if (playerMovement.Attacker.IsAttackingNow || playerMovement.Interactor.IsInteractingNow)
+        {
+            return;
+        }
+        
         _ySpeed += Physics.gravity.y * Time.deltaTime;
 
         if (_characterController.isGrounded)
@@ -83,6 +89,35 @@ public class PlayerJumper
         _characterController.Move(velocity * Time.deltaTime);
     }
 
+    
+    public void UpdateState()
+    {
+        if (_characterController.isGrounded)
+        {
+            // Player is on the ground → reset jump state
+            if (_isJumping)
+            {
+                _isJumping = false;
+                _animator.SetBool(IsJumping, false);
+                _animator.SetBool(IsFalling, false);
+            }
+
+            _isGrounded = true;
+            _animator.SetBool(IsGrounded, true);
+        }
+        else
+        {
+            _isGrounded = false;
+            _animator.SetBool(IsGrounded, false);
+
+            if (_isJumping && _ySpeed < 0)
+            {
+                // Jumping, but falling down
+                _animator.SetBool(IsFalling, true);
+            }
+        }
+    }
+    
     public void ApplyRootMotion()
     {
         if (!_isGrounded) return;

@@ -27,6 +27,12 @@ public class PlayerMover
 
     public void HandleMovement()
     {
+        var playerMovement = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        if (playerMovement.Attacker.IsAttackingNow || playerMovement.Interactor.IsInteractingNow)
+        {
+            return;
+        }
+        
         var input = _move.action.ReadValue<Vector2>();
         MovementDirection = new Vector3(input.x, 0, input.y);
 
