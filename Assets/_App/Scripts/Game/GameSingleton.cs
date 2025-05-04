@@ -6,6 +6,7 @@ public class GameSingleton : MonoBehaviour
     public GameSceneManager GameSceneManager { get; private set; }
     public UIGameManager UIGameManager { get; private set; }
     public PlayerManager PlayerManager { get; private set; }
+    public AudioManager AudioManager { get; private set; }
     
     private void Awake()
     {
@@ -20,5 +21,6 @@ public class GameSingleton : MonoBehaviour
         GameSceneManager = GetComponentInChildren<GameSceneManager>();
         UIGameManager = GetComponentInChildren<UIGameManager>();
         PlayerManager = GetComponentInChildren<PlayerManager>();
+        AudioManager = GetComponentInChildren<AudioManager>();
     }
 }

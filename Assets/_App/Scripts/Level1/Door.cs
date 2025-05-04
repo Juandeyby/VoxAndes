@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _App.Scripts.Level1
 {
@@ -6,14 +7,14 @@ namespace _App.Scripts.Level1
     {
         private static readonly int Open = Animator.StringToHash("Open");
         [SerializeField] private Animator animator;
-        
-        private int _activatedCount;
+        [SerializeField] private int totalCount = 2;
+        private int _currentCount;
         private bool _isOpen;
         
         public void AddActivation()
         {
-            _activatedCount++;
-            if (_activatedCount == 2)
+            _currentCount++;
+            if (_currentCount >= totalCount)
             {
                 OpenDoor();
             }

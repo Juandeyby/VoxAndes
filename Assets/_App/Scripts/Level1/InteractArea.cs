@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -9,7 +10,7 @@ public class InteractArea : MonoBehaviour
     [SerializeField] private UnityEvent onInteractEvent;
     [SerializeField] private Transform transformTarget;
     [SerializeField] private bool isUsable = false;
-    private bool _isActive = true;
+    [ShowInInspector, ReadOnly] private bool _isActive = true;
     
     private void OnTriggerEnter(Collider other)
     {

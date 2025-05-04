@@ -67,6 +67,11 @@ public class PlayerMovementController : MonoBehaviour
 
     void OnApplicationFocus(bool focus)
     {
+        var gameSceneManager = GameSingleton.Instance.GameSceneManager;
+        if (gameSceneManager.IsGamePaused)
+        {
+            return;
+        }
         Cursor.lockState = focus ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }
