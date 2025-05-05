@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5208131379513052015}
   - component: {fileID: 4860425824138788229}
   - component: {fileID: 8010515787185226899}
-  - component: {fileID: 7270084936241962999}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -204,7 +203,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -286,28 +285,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492019282946344517}
   m_Mesh: {fileID: 0}
---- !u!64 &7270084936241962999
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492019282946344517}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &496740533868273389
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +298,6 @@ GameObject:
   - component: {fileID: 5213178604744171003}
   - component: {fileID: 8121501639731202426}
   - component: {fileID: 4164452567299459020}
-  - component: {fileID: 8017461970966056484}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -512,7 +488,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -594,28 +570,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496740533868273389}
   m_Mesh: {fileID: 0}
---- !u!64 &8017461970966056484
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496740533868273389}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2159112842908342136
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +583,6 @@ GameObject:
   - component: {fileID: 58715365749964205}
   - component: {fileID: 3712154507964724038}
   - component: {fileID: 7639298885679905380}
-  - component: {fileID: 1129361032814483792}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -820,7 +773,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -902,28 +855,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2159112842908342136}
   m_Mesh: {fileID: 0}
---- !u!64 &1129361032814483792
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2159112842908342136}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2886591784906445665
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +868,6 @@ GameObject:
   - component: {fileID: 5360422805623557893}
   - component: {fileID: 1707591865738846077}
   - component: {fileID: 6402693855748029530}
-  - component: {fileID: 1076479795088462911}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -1128,7 +1058,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1210,28 +1140,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886591784906445665}
   m_Mesh: {fileID: 0}
---- !u!64 &1076479795088462911
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2886591784906445665}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &4031105923923473030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,7 +1153,6 @@ GameObject:
   - component: {fileID: 6598176044987218681}
   - component: {fileID: 6544686144869362862}
   - component: {fileID: 5722748241650766226}
-  - component: {fileID: 6029659103483334469}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -1436,7 +1343,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1518,28 +1425,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4031105923923473030}
   m_Mesh: {fileID: 0}
---- !u!64 &6029659103483334469
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4031105923923473030}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &4720344363342415881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,7 +1438,6 @@ GameObject:
   - component: {fileID: 2015744423901579187}
   - component: {fileID: 6353846401902133541}
   - component: {fileID: 4579025603494687387}
-  - component: {fileID: 2453157167960947839}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -1744,7 +1628,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1826,28 +1710,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4720344363342415881}
   m_Mesh: {fileID: 0}
---- !u!64 &2453157167960947839
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720344363342415881}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &5392180498725230185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,7 +1723,6 @@ GameObject:
   - component: {fileID: 2850509585608834870}
   - component: {fileID: 7656230344420014044}
   - component: {fileID: 5958966909930087290}
-  - component: {fileID: 5746272477423633443}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -2052,7 +1913,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2133,28 +1994,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5392180498725230185}
-  m_Mesh: {fileID: 0}
---- !u!64 &5746272477423633443
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5392180498725230185}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &5992020876969137908
 GameObject:
@@ -2267,7 +2106,6 @@ GameObject:
   - component: {fileID: 7187507878192938147}
   - component: {fileID: 4305973914024454600}
   - component: {fileID: 8025918857277199366}
-  - component: {fileID: 4668953791662611844}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -2458,7 +2296,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2539,28 +2377,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6492977867404660328}
-  m_Mesh: {fileID: 0}
---- !u!64 &4668953791662611844
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6492977867404660328}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &7129278254187060453
 GameObject:
@@ -2868,7 +2684,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1571
+  m_VersionIndex: 1580
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2984,6 +2800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1397725906813670254}
+  isActive: 1
 --- !u!65 &7232769347045552056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3018,7 +2835,6 @@ GameObject:
   - component: {fileID: 3913736679297724785}
   - component: {fileID: 1884514383608363196}
   - component: {fileID: 6657500069598784846}
-  - component: {fileID: 8613202350347794802}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -3209,7 +3025,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1530
+  m_VersionIndex: 1539
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3290,26 +3106,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8877272523363287691}
-  m_Mesh: {fileID: 0}
---- !u!64 &8613202350347794802
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8877272523363287691}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
