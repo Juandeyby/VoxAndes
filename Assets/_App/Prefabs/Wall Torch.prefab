@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torchLight: {fileID: 3184586364975086023}
   fireParticles: {fileID: 6731471244828715412}
+  fireSound: {fileID: 8300000, guid: f24ff557cfff920468d7dc71e81abcb1, type: 3}
 --- !u!1001 &3886281085679291851
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ public class WallTorch : MonoBehaviour
 {
     [SerializeField] private Light torchLight;
     [SerializeField] private ParticleSystem fireParticles;
+    [SerializeField] private AudioClip fireSound;
 
     private void Awake()
     {
@@ -27,6 +28,10 @@ public class WallTorch : MonoBehaviour
         if (fireParticles != null)
         {
             fireParticles.Play();
+        }
+        if (fireSound != null)
+        {
+            AudioSource.PlayClipAtPoint(fireSound, transform.position);
         }
     }
     

@@ -8,6 +8,7 @@ namespace _App.Scripts.Level1
         private static readonly int Open = Animator.StringToHash("Open");
         [SerializeField] private Animator animator;
         [SerializeField] private int totalCount = 2;
+        [SerializeField] private AudioClip doorOpenSound;
         private int _currentCount;
         private bool _isOpen;
         
@@ -17,6 +18,10 @@ namespace _App.Scripts.Level1
             if (_currentCount >= totalCount)
             {
                 OpenDoor();
+                if (doorOpenSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(doorOpenSound, transform.position);
+                }
             }
         }
 
