@@ -8,7 +8,6 @@ public class MummyDor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.CompareTag("Mummy"))
         {
             foreach (var fragment in doorFragments)
@@ -19,7 +18,7 @@ public class MummyDor : MonoBehaviour
                     rb.AddForce(Vector3.forward * -20f, ForceMode.Impulse);
                 }
             }
+            boxCollider.enabled = false;
         }
-        boxCollider.enabled = false;
     }
 }
