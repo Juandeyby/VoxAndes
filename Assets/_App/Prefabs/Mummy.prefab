@@ -474,6 +474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: X Bot
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c862dd8f1e0a323498269c09fb1b6e44, type: 3}
+      propertyPath: m_TagString
+      value: Mummy
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: c862dd8f1e0a323498269c09fb1b6e44, type: 3}
       propertyPath: m_Controller
       value: 
@@ -622,7 +626,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5599793923771372518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
