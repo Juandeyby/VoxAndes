@@ -4,11 +4,14 @@ using UnityEngine;
 public class PlayerTorch : MonoBehaviour
 {
     [SerializeField] private Collider cTorch;
-    [SerializeField] private AudioClip manAttackSound;
+    
+    private PlayerSound _playerSound;
 
     private void Awake()
     {
         DeactivateCollider();
+        
+        _playerSound = GetComponent<PlayerSound>();
     }
 
     private void ActivateCollider()
@@ -18,9 +21,13 @@ public class PlayerTorch : MonoBehaviour
     
     private void ActivateSound()
     {
-        if (manAttackSound != null)
+        if (_playerSound != null)
         {
-            AudioSource.PlayClipAtPoint(manAttackSound, transform.position);
+            _playerSound.PlayAttackSound();
+        }
+        else
+        {
+            Debug.LogWarning("PlayerSound component not found on the PlayerTorch GameObject.");
         }
     }
     

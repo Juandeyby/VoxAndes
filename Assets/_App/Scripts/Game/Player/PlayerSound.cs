@@ -7,15 +7,31 @@ public class PlayerSound : MonoBehaviour
     
     [SerializeField] private AudioClip jumpSound;
     
+    [SerializeField] private AudioClip attackSound;
+    
     [Header("Footstep Sounds")]
     [SerializeField] private LayerMask footstepSoundLayer;
     [SerializeField] private AudioClip footstepEarthSound;
     [SerializeField] private AudioClip footstepRockSound;
     
+    public void PlayAttackSound()
+    {
+        if (attackSound == null)
+        {
+            Debug.LogWarning("Attack sound not assigned in the inspector.");
+            return;
+        }
+        audioSource.PlayOneShot(attackSound, 0.5f);
+    }
 
     private void ActivateJumpSound()
     {
-        AudioSource.PlayClipAtPoint(jumpSound, transform.position, 0.7f);
+        if (jumpSound == null)
+        {
+            Debug.LogWarning("Jump sound not assigned in the inspector.");
+            return;
+        }
+        audioSource.PlayOneShot(jumpSound, 0.5f);
     }
     
     private void PlayFootstepSound(string surfaceType)

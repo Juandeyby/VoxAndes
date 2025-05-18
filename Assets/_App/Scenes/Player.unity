@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 70521547}
   - component: {fileID: 70521548}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,6 +1653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 559144711}
   jumpSound: {fileID: 8300000, guid: 07dae7d0a34bbce45bea8d194c0aa70a, type: 3}
+  attackSound: {fileID: 8300000, guid: 43165d99946d03043a86e86970095358, type: 3}
   footstepSoundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -1671,7 +1672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cTorch: {fileID: 263084525}
-  manAttackSound: {fileID: 8300000, guid: 43165d99946d03043a86e86970095358, type: 3}
 --- !u!114 &559144706
 MonoBehaviour:
   m_ObjectHideFlags: 0

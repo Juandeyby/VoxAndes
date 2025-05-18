@@ -4,3 +4,8 @@ https://freesound.org/people/cabled_mess/sounds/565110/
 https://freesound.org/people/A_kn/sounds/712116/
 https://freesound.org/people/Vrymaa/sounds/770084/
 https://freesound.org/people/24srtx/sounds/62974/
+https://freesound.org/people/bananplyte/sounds/452321/
+https://freesound.org/people/jjchubby/sounds/749818/
+https://freesound.org/people/MTJohnson/sounds/426326/
+https://freesound.org/people/Breviceps/sounds/445982/
+https://freesound.org/people/Duisterwho/sounds/696623/

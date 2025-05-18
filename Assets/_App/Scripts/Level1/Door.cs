@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,7 +12,13 @@ namespace _App.Scripts.Level1
         [SerializeField] private AudioClip doorOpenSound;
         private int _currentCount;
         private bool _isOpen;
-        
+        private AudioManager _audioManager;
+
+        private void Awake()
+        {
+            _audioManager = GameSingleton.Instance.AudioManager;
+        }
+
         public void AddActivation()
         {
             _currentCount++;
@@ -20,7 +27,7 @@ namespace _App.Scripts.Level1
                 OpenDoor();
                 if (doorOpenSound != null)
                 {
-                    AudioSource.PlayClipAtPoint(doorOpenSound, transform.position);
+                    _audioManager.PlaySFX(doorOpenSound);
                 }
             }
         }

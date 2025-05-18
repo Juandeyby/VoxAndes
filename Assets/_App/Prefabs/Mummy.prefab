@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cHand: {fileID: 2911530486102170349}
+  handHitSound: {fileID: 8300000, guid: fa57060ed9e22b44591d18b2502c014f, type: 3}
 --- !u!1 &9088554383128040190
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +601,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   uiEnemyHealth: {fileID: 8953030965003817882}
+  mummyDeathSound: {fileID: 8300000, guid: f24ff2b9f1edee04db15fc52b8d238a7, type: 3}
+  mummyHurtSound: {fileID: 8300000, guid: c4bbfda46c6f21444b6b0efc6e447517, type: 3}
 --- !u!195 &1590607503544303154
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -635,6 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cHand: {fileID: 2911530486102170349}
+  handHitSound: {fileID: 8300000, guid: fa57060ed9e22b44591d18b2502c014f, type: 3}
 --- !u!114 &3719124987763475188
 MonoBehaviour:
   m_ObjectHideFlags: 0
