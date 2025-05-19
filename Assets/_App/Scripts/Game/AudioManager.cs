@@ -10,7 +10,6 @@ public class AudioManager : MonoBehaviour
     
     [Header("Audio Clips")]
     [SerializeField] private AudioClip[] musicClips;
-    [SerializeField] private AudioClip footstepClip;
     
     [Header("Audio Mixer")]
     [SerializeField] private AudioMixer mixer;
@@ -18,10 +17,20 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        StartLevel();
+    }
+
+    private void StartLevel()
+    {
         musicSource.clip = musicClips[0];
         musicSource.Play();
     }
     
+    public void EndLevel() 
+    {
+        musicSource.Stop();
+    }
+
     public void PlaySFX(AudioClip clip, float volume = 0.5f)
     {
         sfxSource.PlayOneShot(clip, volume);

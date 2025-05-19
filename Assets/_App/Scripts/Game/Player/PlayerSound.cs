@@ -9,6 +9,12 @@ public class PlayerSound : MonoBehaviour
     
     [SerializeField] private AudioClip attackSound;
     
+    [SerializeField] private AudioClip hurtSound;
+    
+    [SerializeField] private AudioClip deathSound;
+    
+    [SerializeField] private AudioClip gameOverSound;
+    
     [Header("Footstep Sounds")]
     [SerializeField] private LayerMask footstepSoundLayer;
     [SerializeField] private AudioClip footstepEarthSound;
@@ -22,6 +28,33 @@ public class PlayerSound : MonoBehaviour
             return;
         }
         audioSource.PlayOneShot(attackSound, 0.5f);
+    }
+    
+    public void PlayHurtSound()
+    {
+        if (hurtSound == null)
+        {
+            Debug.LogWarning("Hurt sound not assigned in the inspector.");
+            return;
+        }
+        audioSource.PlayOneShot(hurtSound, 0.5f);
+    }
+    
+    public void PlayDeathSound()
+    {
+        if (deathSound == null)
+        {
+            Debug.LogWarning("Death sound not assigned in the inspector.");
+            return;
+        }
+        audioSource.PlayOneShot(deathSound, 0.5f);
+        
+        if (gameOverSound == null)
+        {
+            Debug.LogWarning("Game over sound not assigned in the inspector.");
+            return;
+        }
+        audioSource.PlayOneShot(gameOverSound, 0.5f);
     }
 
     private void ActivateJumpSound()

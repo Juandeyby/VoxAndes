@@ -9,3 +9,6 @@ https://freesound.org/people/jjchubby/sounds/749818/
 https://freesound.org/people/MTJohnson/sounds/426326/
 https://freesound.org/people/Breviceps/sounds/445982/
 https://freesound.org/people/Duisterwho/sounds/696623/
+https://freesound.org/people/mrickey13/sounds/515624/
+https://freesound.org/people/FaKexxChaos/sounds/707451/
+https://freesound.org/people/Under7dude/sounds/163442/

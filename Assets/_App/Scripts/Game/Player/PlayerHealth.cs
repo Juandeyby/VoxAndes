@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -5,6 +6,23 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 6;
     [SerializeField] private int currentHealth;
     private UILives _uiLives;
+
+    private PlayerSound _playerSound;
+    private PlayerMovementController _playerMovementController;
+
+    private void Awake()
+    {
+        _playerMovementController = GetComponent<PlayerMovementController>();
+        if (_playerMovementController == null)
+        {
+            Debug.LogWarning("PlayerMovementController component not found on the Player GameObject.");
+        }
+        _playerSound = GetComponent<PlayerSound>();
+        if (_playerSound == null)
+        {
+            Debug.LogWarning("PlayerSound component not found on the Player GameObject.");
+        }
+    }
 
     private void Start()
     {
@@ -33,12 +51,23 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            if (_playerSound != null)
+            {
+                _playerSound.PlayHurtSound();
+            }
+            else
+            {
+                Debug.LogWarning("Player hurt sound not assigned.");
+            }
+        }
         SetHealthUI();
     }
 
     private void Die()
     {
-        
+        _playerMovementController.Die();
     }
 
     private void SetHealthUI()

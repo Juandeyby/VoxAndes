@@ -200,7 +200,6 @@ MonoBehaviour:
   sfxSource: {fileID: 1575693937}
   musicClips:
   - {fileID: 8300000, guid: b2602cf54b2ce214bb148cb04aa0707e, type: 3}
-  footstepClip: {fileID: 0}
   mixer: {fileID: 24100000, guid: e252e5eebd384f844b3dc581752e0cd6, type: 2}
 --- !u!1 &138538859
 GameObject:
@@ -1654,6 +1653,9 @@ MonoBehaviour:
   audioSource: {fileID: 559144711}
   jumpSound: {fileID: 8300000, guid: 07dae7d0a34bbce45bea8d194c0aa70a, type: 3}
   attackSound: {fileID: 8300000, guid: 43165d99946d03043a86e86970095358, type: 3}
+  hurtSound: {fileID: 8300000, guid: 117d08f5659b63640a2c3112474ed627, type: 3}
+  deathSound: {fileID: 8300000, guid: 1a92cccc1abd41e419137919efd3c1bb, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 74e59ae14706cf242aa616de2333a0c6, type: 3}
   footstepSoundLayer:
     serializedVersion: 2
     m_Bits: 64

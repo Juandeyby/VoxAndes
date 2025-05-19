@@ -23,16 +23,27 @@ public class PlayerMovementController : MonoBehaviour
     public PlayerAttacker Attacker => _attacker;
     private PlayerInteractor _interactor;
     public PlayerInteractor Interactor => _interactor;
+    
+    private Animator _animator;
 
     void Awake()
     {
-        var animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         var characterController = GetComponent<CharacterController>();
 
-        _mover = new PlayerMover(characterController, animator, cameraTransform, move, sprint);
-        _jumper = new PlayerJumper(characterController, animator, jump);
-        _attacker = new PlayerAttacker(animator);
-        _interactor = new PlayerInteractor(animator);
+        _mover = new PlayerMover(characterController, _animator, cameraTransform, move, sprint);
+        _jumper = new PlayerJumper(characterController, _animator, jump);
+        _attacker = new PlayerAttacker(_animator);
+        _interactor = new PlayerInteractor(_animator);
+    }
+
+    public void Die()
+    {
+        CanPlay = false;
+        _animator.CrossFade("Die", 0.2f);
+        
+        var audioManager = GameSingleton.Instance.AudioManager;
+        audioManager.EndLevel();
     }
 
     void Update()
