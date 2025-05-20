@@ -20,7 +20,7 @@ public class DoorFragment : MonoBehaviour
 
     private IEnumerator DoorFragmentCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         _meshCollider.enabled = false;
         _rb.isKinematic = true;
     }
