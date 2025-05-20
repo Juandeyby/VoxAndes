@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private PlayerMovementController _playerMovementController;
-    public PlayerMovementController PlayerMovementController => _playerMovementController;
+    [SerializeField] private Player player;
+    public Player Player => player;
+    
+    [SerializeField] private PlayerSpawnPoint playerSpawnPoint;
+    public PlayerSpawnPoint PlayerSpawnPoint => playerSpawnPoint;
 }

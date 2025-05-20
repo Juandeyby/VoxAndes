@@ -1,5 +1,8 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -37,6 +40,11 @@ public class PlayerMovementController : MonoBehaviour
         _interactor = new PlayerInteractor(_animator);
     }
 
+    public void ResetMovement()
+    {
+        
+    }
+
     public void Die()
     {
         CanPlay = false;
@@ -44,6 +52,9 @@ public class PlayerMovementController : MonoBehaviour
         
         var audioManager = GameSingleton.Instance.AudioManager;
         audioManager.EndLevel();
+
+        var player = GameSingleton.Instance.PlayerManager.Player;
+        player.ResetPlayer();
     }
 
     void Update()
@@ -84,6 +95,30 @@ public class PlayerMovementController : MonoBehaviour
             return;
         }
         Cursor.lockState = focus ? CursorLockMode.Locked : CursorLockMode.None;
+    }
+
+    public void Init()
+    {
+        StartCoroutine(ResetPlayer());
+    }
+    
+    private IEnumerator ResetPlayer()
+    {
+        // yield return new WaitForSeconds(4f);
+        //
+        // var currentScene = SceneManager.GetActiveScene().name;
+        // GameSingleton.Instance.GameSceneManager.ChangeLevel(currentScene);
+        
+        _animator.enabled = false;
+        transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+        yield return null;
+        
+        _animator.enabled = true;
+        _animator.CrossFade("Breathing Idle", 0.2f);
+        
+        CanPlay = true;
+        CanInteract = false;
     }
 }
 

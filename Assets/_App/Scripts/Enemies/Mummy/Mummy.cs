@@ -44,7 +44,8 @@ public class MummyStateIdle : IMummyState
     public void Update(Mummy mummy)
     {
         // Logic for updating idle state
-        var playerPosition = GameSingleton.Instance.PlayerManager.PlayerMovementController.transform.position;
+        var playerPosition =
+            GameSingleton.Instance.PlayerManager.Player.PlayerMovementController.transform.position;
         var navMeshAgent = mummy.Agent;
         
         if (Vector3.Distance(mummy.transform.position, playerPosition) < 5f)
@@ -69,7 +70,8 @@ public class MummyStateChase : IMummyState
     public void Update(Mummy mummy)
     {
         // Lógica para actualizar el estado de persecución
-        var playerPosition = GameSingleton.Instance.PlayerManager.PlayerMovementController.transform.position;
+        var playerPosition =
+            GameSingleton.Instance.PlayerManager.Player.PlayerMovementController.transform.position;
         var navMeshAgent = mummy.Agent;
         
         // Verificar la distancia entre la momia y el jugador
@@ -110,7 +112,8 @@ public class MummyStateAttack : IMummyState
     public void Update(Mummy mummy)
     {
         // Logic for updating attack state
-        var playerPosition = GameSingleton.Instance.PlayerManager.PlayerMovementController.transform.position;
+        var playerPosition =
+            GameSingleton.Instance.PlayerManager.Player.PlayerMovementController.transform.position;
         var navMeshAgent = mummy.Agent;
 
         if (Vector3.Distance(mummy.transform.position, playerPosition) > 2f)

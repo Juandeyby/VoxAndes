@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -27,10 +29,10 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _uiLives = GameSingleton.Instance.UIGameManager.HubMenu.Lives;
-        ConfigHealth();
+        Init();
     }
     
-    private void ConfigHealth()
+    public void Init()
     {
         currentHealth = maxHealth;
         SetHealthUI();
@@ -46,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (currentHealth <= 0) return;
         currentHealth -= damage;
         if (currentHealth <= 0)
         {

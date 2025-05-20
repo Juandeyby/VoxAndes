@@ -20,7 +20,7 @@ public class PlayerInteractor
 
     public void HandleInteract(InputAction interactAction)
     {
-        var playerMovement = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        var playerMovement = GameSingleton.Instance.PlayerManager.Player.PlayerMovementController;
         if (playerMovement.Jumper.IsJumpingNow || playerMovement.Attacker.IsAttackingNow)
         {
             return;

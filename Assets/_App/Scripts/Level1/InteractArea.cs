@@ -17,7 +17,7 @@ public class InteractArea : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         if (_isActive == false && isUsable == false) return;
         
-        var playerMovementController = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        var playerMovementController = GameSingleton.Instance.PlayerManager.Player.PlayerMovementController;
         playerMovementController.CanInteract = true;
         playerMovementController.Interactor.OnStartAction += OnStartInteract;
         playerMovementController.Interactor.OnEndAction += OnEndInteract;
@@ -35,7 +35,7 @@ public class InteractArea : MonoBehaviour
         uiInteraction.Hide();
         
         StartCoroutine(SetPositionPlayer(
-            GameSingleton.Instance.PlayerManager.PlayerMovementController.transform,
+            GameSingleton.Instance.PlayerManager.Player.PlayerMovementController.transform,
             transformTarget));
     }
     
@@ -46,7 +46,7 @@ public class InteractArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        var playerMovementController = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        var playerMovementController = GameSingleton.Instance.PlayerManager.Player.PlayerMovementController;
         playerMovementController.CanInteract = false;
         playerMovementController.Interactor.OnStartAction -= OnStartInteract;
         playerMovementController.Interactor.OnEndAction -= OnEndInteract;
@@ -93,7 +93,7 @@ public class InteractArea : MonoBehaviour
     
     private void OnDestroy()
     {
-        var playerMovementController = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        var playerMovementController = GameSingleton.Instance.PlayerManager.Player.PlayerMovementController;
         if (playerMovementController == null) return;
         playerMovementController.Interactor.OnStartAction -= OnStartInteract;
         playerMovementController.Interactor.OnEndAction -= OnEndInteract;

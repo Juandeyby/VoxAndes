@@ -32,7 +32,7 @@ public class PlayerJumper
 
     public void HandleJump()
     {
-        var playerMovement = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        var playerMovement = GameSingleton.Instance.PlayerManager.Player.PlayerMovementController;
         if (playerMovement.Attacker.IsAttackingNow || playerMovement.Interactor.IsInteractingNow)
         {
             return;

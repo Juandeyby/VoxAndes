@@ -17,7 +17,7 @@ public class PlayerAttacker
 
     public void HandleAttack(InputAction attackAction)
     {
-        var playerMovement = GameSingleton.Instance.PlayerManager.PlayerMovementController;
+        var playerMovement = GameSingleton.Instance.PlayerManager.Player.PlayerMovementController;
         if (playerMovement.Jumper.IsJumpingNow || playerMovement.Interactor.IsInteractingNow)
         {
             return;
