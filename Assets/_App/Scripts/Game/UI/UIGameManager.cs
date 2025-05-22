@@ -9,4 +9,5 @@ public class UIGameManager : MonoBehaviour
     public UIPauseMenu PauseMenu => pauseMenu;
     [SerializeField] private UIHubMenu hubMenu;
     public UIHubMenu HubMenu => hubMenu;
+
 }

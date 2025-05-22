@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class InteractArea : MonoBehaviour
+public class FireInteractArea : MonoBehaviour
 {
     [SerializeField] private UnityEvent onInteractEvent;
     [SerializeField] private Transform transformTarget;

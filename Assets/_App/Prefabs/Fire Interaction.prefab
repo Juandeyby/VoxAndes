@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4913554860495154030}
   - component: {fileID: 9206843317376130337}
   m_Layer: 0
-  m_Name: Wall Interaction
+  m_Name: Fire Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
