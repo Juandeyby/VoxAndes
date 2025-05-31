@@ -509,6 +509,9 @@ PrefabInstance:
       addedObject: {fileID: 2824600558991759752}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 41a8b003ce995b8468005fd85999b6d5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3509153894473294939}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 41a8b003ce995b8468005fd85999b6d5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3719124987763475188}
   m_SourcePrefab: {fileID: 100100000, guid: 41a8b003ce995b8468005fd85999b6d5, type: 3}
 --- !u!4 &2600316896913414316 stripped
@@ -601,6 +604,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   uiEnemyHealth: {fileID: 8953030965003817882}
+  mummyGold: {fileID: 3509153894473294939}
   mummyDeathSound: {fileID: 8300000, guid: f24ff2b9f1edee04db15fc52b8d238a7, type: 3}
   mummyHurtSound: {fileID: 8300000, guid: c4bbfda46c6f21444b6b0efc6e447517, type: 3}
 --- !u!195 &1590607503544303154
@@ -639,6 +643,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cHand: {fileID: 2911530486102170349}
   handHitSound: {fileID: 8300000, guid: fa57060ed9e22b44591d18b2502c014f, type: 3}
+--- !u!114 &3509153894473294939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413164314893746710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95bdb085f1306545a673b41d791d74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldPiecePrefab: {fileID: -4163559312251296062, guid: 91207c5552f6a984ca943afa69719344, type: 3}
+  goldAmount: 4
 --- !u!114 &3719124987763475188
 MonoBehaviour:
   m_ObjectHideFlags: 0

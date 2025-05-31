@@ -38802,10 +38802,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3464398864418989006, guid: a10a7785f8760514983a12ff3858b141, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7632488177050909211, guid: a10a7785f8760514983a12ff3858b141, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9999995
@@ -38849,10 +38845,6 @@ PrefabInstance:
     - target: {fileID: 9088554383128040190, guid: a10a7785f8760514983a12ff3858b141, type: 3}
       propertyPath: m_Name
       value: Mummy
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088554383128040190, guid: a10a7785f8760514983a12ff3858b141, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

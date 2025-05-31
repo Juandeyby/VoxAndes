@@ -8,6 +8,7 @@ public class MummyHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int currentHealth = 100;
     [SerializeField] private UIEnemyHealth uiEnemyHealth;
+    [SerializeField] private MummyGold mummyGold;
 
     [SerializeField] private AudioClip mummyDeathSound;
     [SerializeField] private AudioClip mummyHurtSound;
@@ -73,6 +74,7 @@ public class MummyHealth : MonoBehaviour
         }
         
         uiEnemyHealth.SetActive(false);
+        mummyGold.DropGold();
     }
 
     private void SetHealthUI()

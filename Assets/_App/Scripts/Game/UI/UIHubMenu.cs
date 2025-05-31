@@ -11,4 +11,7 @@ public class UIHubMenu : MonoBehaviour
 
     [SerializeField] private UIPuzzleInteract uiPuzzleInteract;
     public UIPuzzleInteract UIPuzzleInteract => uiPuzzleInteract;
+    
+    [SerializeField] private UIGold uiGold;
+    public UIGold UIGold => uiGold;
 }
