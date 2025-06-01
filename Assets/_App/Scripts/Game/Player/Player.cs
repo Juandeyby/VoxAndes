@@ -20,7 +20,12 @@ public class Player : MonoBehaviour
         
         var currentScene = SceneManager.GetActiveScene().name;
         GameSingleton.Instance.GameSceneManager.ChangeLevel(currentScene);
-        
+     
+        ResetValues();
+    }
+
+    public void ResetValues()
+    {
         playerHealth.Init();
         playerMovementController.Init();
     }

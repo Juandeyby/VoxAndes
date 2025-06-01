@@ -104,13 +104,11 @@ public class PlayerMovementController : MonoBehaviour
     
     private IEnumerator ResetPlayer()
     {
-        // yield return new WaitForSeconds(4f);
-        //
-        // var currentScene = SceneManager.GetActiveScene().name;
-        // GameSingleton.Instance.GameSceneManager.ChangeLevel(currentScene);
-        
         _animator.enabled = false;
+        yield return null;
+        
         transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+        Debug.Log("Player reset position and rotation" + transform.position + " " + transform.rotation);
 
         yield return null;
         
@@ -120,13 +118,4 @@ public class PlayerMovementController : MonoBehaviour
         CanPlay = true;
         CanInteract = false;
     }
-}
-
-public enum PlayerAction
-{
-    None,
-    Jumping,
-    Attacking,
-    Interacting,
-    Moving
 }

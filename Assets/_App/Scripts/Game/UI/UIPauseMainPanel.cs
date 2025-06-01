@@ -31,6 +31,10 @@ public class UIPauseMainPanel : MonoBehaviour
     
     private void OnQuitButtonClicked()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         SceneManager.LoadScene("Menu");
     }
     

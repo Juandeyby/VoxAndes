@@ -9,7 +9,6 @@ public class GameSceneManager : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionReference pauseAction;
     
-    [SerializeField] private string sceneToLoad = "Level1";
     private string _currentLevel;
     public bool IsGamePaused { get; set; }
 
@@ -32,7 +31,24 @@ public class GameSceneManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(LoadScene(sceneToLoad));
+        var levelNumber = GameSingleton.Instance.DataManager.GameData.CurrentLevel;
+        StartCoroutine(LoadScene($"Level{levelNumber}"));
+    }
+
+    public IEnumerator NextLevel()
+    {
+        var dataManager = GameSingleton.Instance.DataManager;
+        var levelNumber = dataManager.GameData.CurrentLevel;
+        var nextLevelIndex = levelNumber + 1;
+        dataManager.SaveLevel(nextLevelIndex);
+        dataManager.SaveData();
+        
+        var player = GameSingleton.Instance.PlayerManager.Player;
+        player.ResetValues();
+
+        yield return null;
+        
+        ChangeLevel($"Level{nextLevelIndex}");
     }
 
     public void ChangeLevel(string newLevel)

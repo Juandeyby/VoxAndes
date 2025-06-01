@@ -8,6 +8,7 @@ public class UIMenuPanel : MonoBehaviour
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button optionsButton;
+    [SerializeField] private Button creditButton;
     [SerializeField] private Button quitButton;
 
     private void Awake()
@@ -15,7 +16,12 @@ public class UIMenuPanel : MonoBehaviour
         resumeButton.onClick.AddListener(OnResumeButtonClicked);
         newGameButton.onClick.AddListener(OnNewGameButtonClicked);
         optionsButton.onClick.AddListener(OnOptionsButtonClicked);
+        creditButton.onClick.AddListener(OnCreditButtonClicked);
         quitButton.onClick.AddListener(OnQuitButtonClicked);
+    }
+
+    private void OnCreditButtonClicked()
+    {
     }
 
     private void OnResumeButtonClicked()
@@ -24,7 +30,7 @@ public class UIMenuPanel : MonoBehaviour
 
     private void OnNewGameButtonClicked()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Player");
     }
 
     private void OnOptionsButtonClicked()
@@ -33,5 +39,13 @@ public class UIMenuPanel : MonoBehaviour
 
     private void OnQuitButtonClicked()
     {
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 }
