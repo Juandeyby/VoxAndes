@@ -1,0 +1,15 @@
+https://freesound.org/people/plagasul/sounds/380074/?
+https://freesound.org/people/sidequesting/sounds/491178/
+https://freesound.org/people/cabled_mess/sounds/565110/
+https://freesound.org/people/A_kn/sounds/712116/
+https://freesound.org/people/Vrymaa/sounds/770084/
+https://freesound.org/people/24srtx/sounds/62974/
+https://freesound.org/people/bananplyte/sounds/452321/
+https://freesound.org/people/jjchubby/sounds/749818/
+https://freesound.org/people/MTJohnson/sounds/426326/
+https://freesound.org/people/Breviceps/sounds/445982/
+https://freesound.org/people/Duisterwho/sounds/696623/
+https://freesound.org/people/mrickey13/sounds/515624/
+https://freesound.org/people/FaKexxChaos/sounds/707451/
+https://freesound.org/people/Under7dude/sounds/163442/
+https://freesound.org/people/severaltimes/sounds/173989/
