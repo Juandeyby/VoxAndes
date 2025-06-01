@@ -39,13 +39,6 @@ public class UIMenuPanel : MonoBehaviour
 
     private void OnQuitButtonClicked()
     {
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
-        {
-            Application.Quit();
-        }
+        Application.Quit();
     }
 }

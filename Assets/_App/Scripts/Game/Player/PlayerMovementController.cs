@@ -105,12 +105,14 @@ public class PlayerMovementController : MonoBehaviour
     private IEnumerator ResetPlayer()
     {
         _animator.enabled = false;
-        yield return null;
+        CanPlay = false;
+        CanInteract = false;
+        yield return new WaitForSeconds(0.2f);
         
         transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
         Debug.Log("Player reset position and rotation" + transform.position + " " + transform.rotation);
 
-        yield return null;
+        yield return new WaitForSeconds(0.2f);
         
         _animator.enabled = true;
         _animator.CrossFade("Breathing Idle", 0.2f);

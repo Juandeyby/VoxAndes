@@ -11,6 +11,16 @@ public class EndLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            var currentLevel = SceneManager.GetActiveScene().name;
+            if (currentLevel == "Level2")
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                
+                SceneManager.LoadScene("Menu");
+                return;
+            }
+            
             var gameSceneManager = GameSingleton.Instance.GameSceneManager;
             if (gameSceneManager != null)
             {
